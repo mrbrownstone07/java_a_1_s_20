@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Invoice {
     private ArrayList<Product> list = new ArrayList<Product>();
-
+    
     public Invoice() {}
     public Invoice(ArrayList<Product> list) {
         this.list = list;

@@ -56,6 +56,4 @@ public abstract class StockableProduct extends Product implements Stockable {
 						p1.getNumberOfItemsStocked() == p2.getNumberOfItemsStocked() ? 0 : 1);
 		}
 	};
-
-
 }

@@ -3,7 +3,7 @@ package app;
 /**
  * Game
  */
-public class Game extends StockableProduct implements Rentable{
+public class Game extends StockableProduct{
     private String nameOfDeveloper;
     
     public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre) {

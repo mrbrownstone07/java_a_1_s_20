@@ -3,7 +3,7 @@ package app;
 /**
  * Movies
  */
-public class Movies extends StockableProduct implements Rentable{
+public class Movies extends StockableProduct{
     private String directorName;
     
     public Movies(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre,
@@ -29,5 +29,4 @@ public class Movies extends StockableProduct implements Rentable{
                 + ", genre: "+super.getGenre()
                 + ", album name: "+this.getDirectorName();
     }
-    
 }
