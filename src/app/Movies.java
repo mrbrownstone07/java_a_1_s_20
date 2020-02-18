@@ -6,14 +6,12 @@ package app;
 public class Movies extends StockableProduct{
     private String directorName;
     
-    public Movies(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre,
-            int numberOfItemsStocked) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, numberOfItemsStocked);
+    public Movies(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
+        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
     }
 
-    public Movies(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, int numberOfItemsStocked,
-            String directorName) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, numberOfItemsStocked);
+    public Movies(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked, String directorName) {
+        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
         this.directorName = directorName;
     }
 
@@ -24,9 +22,10 @@ public class Movies extends StockableProduct{
     public String getInfo() {
         return "name: "+super.getName() 
                 + ", price: "+super.getPrice()
+                + ", discount: "+super.getDiscount()
                 + ", year of publish: "+super.getYearOfPublish()
                 + ", number of stock available: "+super.getNumberOfItemsStocked()
                 + ", genre: "+super.getGenre()
-                + ", album name: "+this.getDirectorName();
+                + ", director: "+this.getDirectorName();
     }
 }

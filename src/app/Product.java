@@ -10,17 +10,22 @@ public abstract class Product {
     private boolean isRentable;
     private int yearOfPublish;
     private String genre;
+    private double discount;
 
     public Product() { }
 
-    public Product(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre) {
+    public Product(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount) {
         this.name = name;
         this.productId = productId;
         this.price = price;
         this.isRentable = isRentable;
         this.genre = genre;
         this.yearOfPublish = yearOfPublish;
+        this.discount = discount;
     }
+
+    public double getDiscount() {return discount;}
+    public void setDiscount(double discount) {this.discount = discount;}
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
@@ -51,7 +56,5 @@ public abstract class Product {
     public String toString() {
         return "Product [genre=" + genre + ", isRentable=" + isRentable + ", name=" + name + ", price=" + price
                 + ", productId=" + productId + ", yearOfPublish=" + yearOfPublish + "]";
-    }
-
-    
+    }    
 }

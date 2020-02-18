@@ -3,20 +3,21 @@ package app;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Invoice
  */
 public class Invoice {
     private ArrayList<Product> list = new ArrayList<Product>();
+    private HashMap<Product, Integer> listMap = new HashMap<Product, Integer>();
     
     public Invoice() {}
-    public Invoice(ArrayList<Product> list) {
-        this.list = list;
-    }
 
     public void addProduct(Product product){
-        list.add(product);
+        list.add(product);  
+        System.err.println(this.getClassFalg(product));
+
     }
 
     public void removeProduct(Product product){
@@ -35,6 +36,10 @@ public class Invoice {
         return invoice;
     }
 
+    private int getClassFalg(Product product){
+        String p = product.getClass().getSimpleName();
+        return (p.equals("Music") ? 1 : (p.equals("Movies") ? 2 : 3));
+    }
     
 
     

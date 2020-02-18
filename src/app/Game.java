@@ -6,17 +6,17 @@ package app;
 public class Game extends StockableProduct{
     private String nameOfDeveloper;
     
-    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre) {
-        super(name, productId, price, isRentable, yearOfPublish, genre);
+    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount) {
+        super(name, productId, price, isRentable, yearOfPublish, genre, discount);
     }
 
-    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, int numberOfItemsStocked) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, numberOfItemsStocked);
+    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
+        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
     }
 
-    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, int numberOfItemsStocked,
+    public Game(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked,
     String nameOfDeveloper) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, numberOfItemsStocked);
+        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
         this.nameOfDeveloper = nameOfDeveloper;
     }
 
@@ -29,6 +29,7 @@ public class Game extends StockableProduct{
     public String getInfo() {
         return "name: "+super.getName() 
                 + ", price: "+super.getPrice()
+                + ", discount: "+super.getDiscount()
                 + ", year of publish: "+super.getYearOfPublish()
                 + ", number of stock available: "+super.getNumberOfItemsStocked()
                 + ", genre: "+super.getGenre()

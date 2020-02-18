@@ -8,12 +8,12 @@ import java.util.Comparator;
 public abstract class StockableProduct extends Product implements Stockable {
 	private int numberOfItemsStocked;
 
-	public StockableProduct(String name, int productId, double price, boolean isRentable,int yearOfPublish, String genre) {
-		super(name, productId, price, isRentable, yearOfPublish, genre);
+	public StockableProduct(String name, int productId, double price, boolean isRentable,int yearOfPublish, String genre, double discount) {
+		super(name, productId, price, isRentable, yearOfPublish, genre, discount);
 	}
 
-	public StockableProduct(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, int numberOfItemsStocked) {
-		super(name, productId, price, isRentable, yearOfPublish, genre);
+	public StockableProduct(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
+		super(name, productId, price, isRentable, yearOfPublish, genre, discount);
 		this.numberOfItemsStocked = numberOfItemsStocked;
 	}
 	
@@ -38,11 +38,12 @@ public abstract class StockableProduct extends Product implements Stockable {
 		this.numberOfItemsStocked = numberOfnewProducts;
 	}
 	
+	@Override
 	public Product getProduct(){
 		this.removeStock(1);
 		return this;
 	}
-
+	
 	public static Comparator<StockableProduct> priceComparator = new Comparator<StockableProduct>(){
 		public int compare(StockableProduct p1, StockableProduct p2){
 			return (p1.getPrice() < p2.getPrice() ? -1 : 
