@@ -25,7 +25,11 @@ public class Invoice {
     }
 
     public double calculatePrice(){
-        return 0;
+        double price = 0.0;
+        for( Product product : list ){
+            price += product.getPrice();
+        }
+        return price;
     }
 
     public String getInvoice(){
