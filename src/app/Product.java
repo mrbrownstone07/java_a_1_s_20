@@ -7,21 +7,20 @@ public abstract class Product {
     private String name;
     private int productId;
     private double price;
-    private boolean isRentable;
     private int yearOfPublish;
     private String genre;
     private double discount;
+    private static int n = 0;
 
     public Product() { }
 
-    public Product(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount) {
+    public Product(String name, double price, int yearOfPublish, String genre, double discount) {
         this.name = name;
-        this.productId = productId;
         this.price = price;
-        this.isRentable = isRentable;
         this.genre = genre;
         this.yearOfPublish = yearOfPublish;
         this.discount = discount;
+        this.productId = Product.n++;
     }
 
     public double getDiscount() {return discount;}
@@ -30,14 +29,10 @@ public abstract class Product {
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public int getProductId() {return productId;}
-    public void setProductId(int productId) {this.productId = productId;}
+    public int getProductId() {return this.productId;}
 
     public double getPrice() {return price;}
     public void setPrice(double price) {this.price = price;}
-
-    public boolean isRentable() {return isRentable;}
-    public void setRentable(boolean isRentable) {this.isRentable = isRentable;}
 
     public int getYearOfPublish() {return yearOfPublish;}
     public void setYearOfPublish(int yearOfPublish) {this.yearOfPublish = yearOfPublish;}
@@ -52,9 +47,14 @@ public abstract class Product {
                 +", Price: "+this.getPrice();
     }
 
+    public int getClassFlag(){
+        String p = this.getClass().getSimpleName();
+        return (p.equals("Music") ? 0 : (p.equals("Movie") ? 1 : 2));
+    }
+
     @Override
     public String toString() {
-        return "Product [genre=" + genre + ", isRentable=" + isRentable + ", name=" + name + ", price=" + price
+        return "Product [genre=" + genre + ", name=" + name + ", price=" + price
                 + ", productId=" + productId + ", yearOfPublish=" + yearOfPublish + "]";
     }    
 }

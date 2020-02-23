@@ -6,12 +6,12 @@ package app;
 public class Music extends StockableProduct{
     private String artistName;
 
-    public Music(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
+    public Music(String name, double price, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
+        super(name, price, yearOfPublish, genre, discount, numberOfItemsStocked);
     }
     
-    public Music(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked, String albumName, String artistName) {
-        super(name, productId, price, isRentable, yearOfPublish, genre, discount, numberOfItemsStocked);
+    public Music(String name, double price, int yearOfPublish, String genre, double discount, int numberOfItemsStocked, String artistName) {
+        super(name, price, yearOfPublish, genre, discount, numberOfItemsStocked);
         this.artistName = artistName;
     }
 
@@ -20,13 +20,14 @@ public class Music extends StockableProduct{
 
     @Override
     public String getInfo() {
-        return "name: "+super.getName() 
+        return "Album: "+super.getName() 
                 + ", price: "+super.getPrice()
                 + ", discount: "+super.getDiscount()
                 + ", year of publish: "+super.getYearOfPublish()
                 + ", number of stock available: "+super.getNumberOfItemsStocked()
                 + ", genre: "+super.getGenre()
-                + ", artist name: "+this.getArtistName();
+                + ", artist name: "+this.getArtistName()
+                + ", product id: "+ super.getProductId();
     }
     
 }

@@ -1,6 +1,7 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -46,12 +47,14 @@ public class Inventory implements Iterable<StockableProduct> {
     }
 
     public void sortByPrice(){
-        StockableProductSorter st = new StockableProductSorter(items);
-        items = st.getSortedStockableProductByPrice();        
+        // StockableProductSorter st = new StockableProductSorter(items);
+        // items = st.getSortedStockableProductByPrice(); 
+        Collections.sort(items, StockableProduct.priceComparator);       
     }
 
     public void sortByAvailableStock(){
-        StockableProductSorter st = new StockableProductSorter(items);
-        items = st.getSortedStockableProductByAvailableStock();
+        // StockableProductSorter st = new StockableProductSorter(items);
+        // items = st.getSortedStockableProductByAvailableStock();
+        Collections.sort(items, StockableProduct.availabeStockComparator);
     }
 }

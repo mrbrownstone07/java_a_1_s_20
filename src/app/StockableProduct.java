@@ -8,12 +8,12 @@ import java.util.Comparator;
 public abstract class StockableProduct extends Product implements Stockable {
 	private int numberOfItemsStocked;
 
-	public StockableProduct(String name, int productId, double price, boolean isRentable,int yearOfPublish, String genre, double discount) {
-		super(name, productId, price, isRentable, yearOfPublish, genre, discount);
+	public StockableProduct(String name, double price, int yearOfPublish, String genre, double discount) {
+		super(name, price, yearOfPublish, genre, discount);
 	}
 
-	public StockableProduct(String name, int productId, double price, boolean isRentable, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
-		super(name, productId, price, isRentable, yearOfPublish, genre, discount);
+	public StockableProduct(String name, double price, int yearOfPublish, String genre, double discount, int numberOfItemsStocked) {
+		super(name, price, yearOfPublish, genre, discount);
 		this.numberOfItemsStocked = numberOfItemsStocked;
 	}
 	
